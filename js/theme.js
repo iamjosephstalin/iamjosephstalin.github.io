@@ -132,11 +132,14 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: '/mail.php',
+            url: 'mail.php',
             data: formData,
             success: function() {
                 $('#contact-modal').modal('hide');
                 $('#thanks-modal').modal('show');
+                $(formName + ' .js-field-name').val('');
+                $(formName + ' .js-field-email').val('');
+                $(formName + ' .js-field-message').val('');
             },
             error: function() {
                 console.log('error');

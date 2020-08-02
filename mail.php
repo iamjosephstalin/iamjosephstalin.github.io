@@ -24,10 +24,6 @@
                             <td style='width:400px'>$email_id</td>
                         </tr>
                         <tr>
-                            <td style='width:150px'><strong>Mobile No: </strong></td>
-                            <td style='width:400px'>$mobile_no</td>
-                        </tr>
-                        <tr>
                             <td style='width:150px'><strong>Message: </strong></td>
                             <td style='width:400px'>$msg</td>
                         </tr>
@@ -43,20 +39,16 @@
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
  
         // More headers
-        $headers .= 'From: Admin <no-reply@websapex.com>' . "\r\n"; // Give an email id on which you want get a reply. User will get a mail from this email id
+        $headers .= 'From: Admin <no-reply@joseph.com>' . "\r\n"; // Give an email id on which you want get a reply. User will get a mail from this email id
          
         if(mail($to,$subject,$message,$headers)){
             // Message if mail has been sent
-            echo "<script>
-                    alert('Mail has been sent Successfully.');
-                </script>";
+            return true;
         }
  
         else{
             // Message if mail has been not sent
-            echo "<script>
-                    alert('EMAIL FAILED');
-                </script>";
+            return false;
         }
     }
 ?>
